@@ -1,0 +1,14 @@
+{% extends 'basse.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div style="text-align:center">Hi {{ user.username }}! Welcome to Watora Mari Homepage!!
+    </div>
+    <p><a href="{% url 'logout' %}">Logout</a> </p>
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+{% endblock %}
